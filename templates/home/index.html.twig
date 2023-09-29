@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <h2>Page home de test</h2>
+    <h3>Hello {{nom}} vous avez {{age}} ans</h3>
+
+    {% if age > 21 %}
+        <p>Tu es vieux</p>
+    {% else %}
+        <p>Tu es bien jeune ! </p>    
+    {% endif %}
+
+    {% for prenom, age in tableau %}
+        <div>{{prenom}} a {{age}} ans</div>
+    {% endfor %}
+
+    <h3>Avec loop.first</h3>
+    {% for prenom, age in tableau %}
+        {% if loop.first %}
+            <div style="font-size: 22px">{{loop.index}} - {{prenom}} a {{age}} ans</div>
+        {% else %}
+            <div>{{loop.index}} - {{prenom}} a {{age}} ans</div>
+        {% endif %}        
+    {% endfor %}
+
+    {% for cpt in 0..10 %}
+        <div>{{cpt}}</div>
+    {% endfor %}
+
+    {% set url = "https://www.epse.be" %}
+
+    <a href="{{url}}">Lien vers EPSE</a><br>
+    <a href="{{path('blog_show',{'id':123})}}">Lien vers produit 123</a>
+    
+
+
+
+{% endblock %}
