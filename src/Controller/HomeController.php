@@ -21,7 +21,7 @@ class HomeController extends AbstractController
         ];
 
         return $this->render('home/index.html.twig', [
-            'tableau' => $prenoms, 'HomeController',
+            'tableau' => $prenoms,
             'nom' => $name,
             'age' => 45
         ]);
