@@ -7,7 +7,9 @@
 
     <h3>Products Page</h3>
     {% for product in products %}
-        <div>{{product.title}}</div>
+        <div>
+            <a href="{{path('product_show', {'id':product.id} )}}">{{product.title}}</a>
+        </div>
 
     {% endfor %}
 {% endblock %}

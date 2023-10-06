@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon site - {{product.title}}{% endblock %}
+
+{% block body %}
+    <h1>{{product.title}}</h1>
+    <div>{{product.description | raw}}</div>
+    <div>fait le : {{product.createAt|date('d - m - Y')}}</div>
+
+    <img src="{{product.image}}" alt="image de {{product.title}}">
+
+{% endblock %}
