@@ -4,6 +4,13 @@
 
 {% block body %}
     {{form_start(form)}}
+    {# {{form_label(form.title)}}
+    {{form_widget(form.title)}}
+    {{form_widget(form.description)}} #}
+    <h1>avant form</h1>
+    {{form_widget(form)}}
+
+    <input type="submit" value="Envoyer">
 
     {{form_end(form)}}
 

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,13 +49,7 @@ class ProductController extends AbstractController
     public function create(): Response
     {
         $product = new Product();
-        $form = $this->createFormBuilder($product)
-                    ->add('title')
-                    ->add('description')
-                    ->add('createAt')
-                    ->add('image')
-                    ->getForm();
-
+        $form = $this->createForm(ProductType::class, $product);
         return $this->render("product/new.html.twig",[
             'form' => $form->createView()
         ]);
